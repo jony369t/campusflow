@@ -1,0 +1,28 @@
+{
+  "name": "campusflow-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CampusFlow AI — Centralized University Information, Academic Routine, Deadlines, and AI Notice Assistant Platform",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:server": "npm --workspace server run dev",
+    "dev:client": "npm --workspace client run dev",
+    "build": "npm --workspace server run build && npm --workspace client run build",
+    "lint": "npm --workspace server run lint && npm --workspace client run lint",
+    "typecheck": "npm --workspace server run typecheck && npm --workspace client run typecheck",
+    "seed": "npm --workspace server run seed",
+    "test": "node --test tests/campusflow.test.mjs",
+    "test:vitest": "npm --workspace server run test && npm --workspace client run test"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}
